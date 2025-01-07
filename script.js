@@ -35,7 +35,7 @@ function hideAllSections() {
   content.classList.add("hidden");
   contentUsers.classList.add("hidden");
   contentInvoiceUser.classList.add("hidden"); // Fixed variable name
-  contentanalysesUsers.classList.add('hidden')
+  contentanalysesUsers.classList.add("hidden");
 }
 dashboardHome.addEventListener("click", () => {
   hideAllSections();
@@ -84,14 +84,14 @@ function addCustomNavbar() {
       </div>
     </div>
   `;
- 
+
   // Add the navbar to all sections dynamically
   const sections = document.querySelectorAll(
     ".contentUsers, .contentinvoiUser,.contentanalysesUsers"
   );
 
   sections.forEach((section) => {
-    section.insertAdjacentHTML("afterbegin", navbarHTML);      
+    section.insertAdjacentHTML("afterbegin", navbarHTML);
   });
 
   const showMenuButtons = document.querySelectorAll(".dropmenu i");
@@ -102,13 +102,9 @@ function addCustomNavbar() {
       menu.classList.remove("active");
       button.style.display = "block";
       main.classList.remove("menu-hidden");
-      
     });
   });
 }
 
 // Call the function to add the navbar
 addCustomNavbar();
-
-
-
