@@ -22,17 +22,20 @@ body {
 
 .main {
   background-color: #0b0b0b;
-  height: 100vh;
+  height: auto;
   width: 100%;
-  display: grid;
-  grid-template-columns: 18% auto;
+  position: relative;
+  padding: 5px 30px;
 }
 .main.menu-hidden {
-  grid-template-columns: auto; /* Remove space for the menu when hidden */
+  grid-template-columns: 0 auto; /* Remove space for the menu when hidden */
 }
 .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
   background-color: #0f0f0f;
-  width: 100%;
+  width: 22%;
   height: 100vh;
   display: flex;
   justify-content: space-between;
@@ -42,6 +45,7 @@ body {
   transition: transform 0.6s, opacity 0.6s;
   opacity: 1;
   visibility: visible;
+  z-index: 10;
 }
 .menu.active {
   position: absolute;
@@ -53,7 +57,7 @@ body {
 .profile {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 5px;
 }
 .infoProfile h2 {
@@ -85,7 +89,7 @@ body {
   color: var(--text-color);
 }
 .dropmenu i {
-  font-size: 25px;
+  font-size: 35px;
   cursor: pointer;
   color: var(--text-color);
   width: 100%;
@@ -151,7 +155,7 @@ body {
 .content {
   display: block;
   width: 100%;
-  height: 100vh;
+  height: auto;
   background-color: var(--color-background-image);
   padding: 30px;
 }
@@ -159,7 +163,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 30px;
+  padding: 5px 0px;
+  margin-bottom: 15px;
 }
 .endnav {
   display: flex;
@@ -350,6 +355,16 @@ body {
 .contentinvoiUser {
   color: rgb(255, 255, 255);
   width: 100%;
+  height: 100vh;
+  background-color: var(--color-background-image);
+  opacity: 1;
+  transform: scale(1);
+  transition: transform scale 0.4s ease opacity 0.4s ease;
+  padding: 30px;
+}
+.contentUsers {
+  color: rgb(255, 255, 255);
+  width: 100%;
   height: auto;
   background-color: var(--color-background-image);
   opacity: 1;
@@ -357,7 +372,6 @@ body {
   transition: transform scale 0.4s ease opacity 0.4s ease;
   padding: 30px;
 }
-
 .spaceinvoice {
   display: flex;
   align-items: center;
@@ -449,7 +463,9 @@ form {
   width: 100%;
   height: auto;
 }
-
+.titleTable {
+  text-align: start;
+}
 .datatable {
   width: 100%;
   height: auto;
@@ -569,7 +585,7 @@ td a {
   width: 100%;
   height: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   gap: 10px;
@@ -634,11 +650,24 @@ td a {
   height: auto;
   padding: 30px;
 }
+.titleAnalyese {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+.titlePart {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #118721;
+}
 .contentpr1 {
   display: flex;
   padding: 30px;
   gap: 10px;
   width: 100%;
+  height: auto;
 }
 .boxesAnlyses {
   display: grid;
@@ -728,6 +757,394 @@ td a {
   height: auto;
   background-color: #191a1925;
 }
+/*chart anlyeses users part 2*/
+
+.contentpr2 {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  height: auto;
+  padding: 30px;
+}
+.chartAnalyeseUsersCountry {
+  width: 100%;
+  height: auto;
+  background-color: #191a1925;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.newUsers {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+#myChart3 {
+  height: auto;
+  width: auto;
+  padding: 10px;
+}
+.newUser {
+  background-color: #191a1925;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  height: auto;
+}
+.prinfo {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.iconNewuser i {
+  color: var(--text-color);
+  font-size: 35px;
+}
+.infoNweuser h2 {
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.infoNweuser p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: var(--text-color);
+}
+.infoNweuser p span {
+  color: green;
+}
+
+.newFl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.newFl h2 {
+  background-color: #151515;
+  padding: 10px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  transition: 0.4s;
+}
+.newFl button {
+  padding: 5px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  outline: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #fcfcfc;
+  background-color: #151515;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+.newFl h2:hover,
+.newFl button:hover {
+  background-color: #1f1f1f;
+}
+/* section for balance analyses*/
+.contentBalanceAnalyses {
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+  overflow: hidden;
+}
+.titleAnalyeseBalance {
+  font-size: 28px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  padding-top: 30px;
+  margin-bottom: 10px;
+}
+.titlePartBalance {
+  color: #239432;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+.cardsBalance {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  height: auto;
+}
+.card {
+  background: #1717174f;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 40px 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  height: auto;
+  transform: translateY(0);
+  transition: transform 0.4s;
+}
+.card:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(10px);
+}
+.iconCard i {
+  font-size: 35px;
+  color: white;
+}
+.infoCartd h2 {
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.infoCartd p {
+  font-size: 10px;
+  font-weight: 300;
+  color: rgb(131, 131, 131);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.infoCartd span {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(228, 227, 227);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* charts section 5*/
+.charts {
+  display: flex;
+  justify-content: center;
+  align-items: stretch; /* Ensures all children have the same height */
+  gap: 20px; /* Adds spacing between charts */
+  width: 100%;
+  flex-wrap: wrap; /* Ensures charts stack on smaller screens */
+  height: 100vh;
+}
+
+.chart1,
+.chart2 {
+  flex: 1 1 300px; /* Allows flexibility and ensures responsiveness */
+  max-width: auto; /* Sets a maximum width for the charts */
+  max-height: 100%;
+  padding: 30px;
+  background: #1717174f;
+  border-radius: 10px; /* Adds rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
+  text-align: center;
+  height: 400px; /* Ensures both charts have the same height */
+  display: flex; /* Centers content vertically */
+  flex-direction: column; /* Ensures vertical alignment of children */
+  justify-content: center; /* Centers content vertically */
+  align-items: center;
+}
+
+#balanceChart {
+  height: 200px;
+  width: 200px;
+}
+
+#balanceChart2 {
+  height: 200px;
+  width: 200px;
+}
+
+/* form section to do liste */
+
+.contentTodoliste {
+  height: 100vh;
+  width: 100%;
+  padding: 30px;
+}
+.formAlltodo {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  gap: 20px;
+}
+.formtodo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  width: 65%;
+  background-color: rgb(12, 12, 12);
+  padding: 40px;
+  border-radius: 10px;
+}
+.formtodo label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: white;
+  font-weight: 300;
+}
+.formtodo input {
+  padding: 15px;
+  width: 100%;
+  background-color: #2c2c2c4e;
+  outline: 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+}
+.formtodo button {
+  padding: 10px;
+  width: 100%;
+  background-color: #03440c;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: 0;
+  border: 1px solid transparent;
+  transform: scale(0.99);
+  transition: 0.4s;
+}
+.formtodo button:hover {
+  background-color: #023108;
+  transform: scale(0.96);
+}
+
+.titleContent .t1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+  color: white;
+}
+
+.titleContent .t2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: white;
+}
+.titleContent .t2 span {
+  font-weight: 300;
+  color: rgb(34, 187, 42);
+}
+.diplayTasks {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 40px;
+  width: 100%;
+}
+.editTask ul li,
+.completedTask ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.editTask ul li i,
+.completedTask ul li i {
+  font-size: 30px;
+  color: #056b12;
+}
+.editTask,
+.completedTask {
+  width: 100%;
+}
+li {
+  border: 1px solid rgba(0, 128, 0, 0.299);
+  padding: 18px;
+  border-radius: 5px;
+  color: rgb(229, 228, 228);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.data {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+.editTask h2,
+.completedTask h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.btnCom {
+  padding: 10px;
+  background-color: #03440c;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transform: scale(0.95);
+  transition: 0.4s;
+}
+.btnCom:hover {
+  transform: scale(0.99);
+}
+.btnedit .btnCom i,
+.btnedit .btnDl i,
+.btndelete .btnDl i {
+  font-size: 15px;
+  color: white;
+}
+.btnDl {
+  padding: 10px;
+  background-color: #440303;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  transform: scale(0.95);
+  transition: 0.4s;
+}
+.btnDl:hover {
+  transform: scale(0.99);
+}
+.btnedit {
+  display: flex;
+  gap: 4px;
+}
 @media screen and (max-width: 740px) {
   body {
     font-size: 16px; /* Base font size */
@@ -743,6 +1160,7 @@ td a {
   }
   .boxes {
     flex-wrap: wrap;
+    padding: 5px;
   }
   .prtAnalayses {
     display: flex;
@@ -763,8 +1181,9 @@ td a {
     background-color: #0b0b0b;
     height: auto;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr; /* Single column layout */
+    position: relative;
+    height: auto;
+    padding: 5px;
   }
   .menu {
     position: fixed;
@@ -782,13 +1201,13 @@ td a {
     width: 100%;
     height: auto;
     background-color: var(--color-background-image);
-    padding: 10px;
+    padding: 20px;
   }
   .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 10px 10px;
   }
 
   .chart {
@@ -796,7 +1215,7 @@ td a {
     width: 100%;
   }
   #myChart {
-    height: 250px;
+    height: 300px;
     width: 100%;
   }
   .analaysesHome {
@@ -804,7 +1223,7 @@ td a {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    padding: 10px;
+    padding: 20px;
     height: auto;
   }
   .chart {
@@ -864,6 +1283,17 @@ td a {
     height: 100vh;
   }
   /*Sextion Btn add invoice*/
+
+  .contentinvoiUser {
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: auto;
+    background-color: var(--color-background-image);
+    opacity: 1;
+    transform: scale(1);
+    transition: transform scale 0.4s ease opacity 0.4s ease;
+    padding: 10px 20px;
+  }
   .spaceinvoice {
     display: flex;
     align-items: center;
@@ -895,7 +1325,7 @@ td a {
   .contentpr1 {
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    padding: 20px;
     gap: 10px;
     width: 100%;
   }
@@ -917,6 +1347,136 @@ td a {
   .contentanalysesUsers {
     width: 100%;
     height: auto;
+    padding: 20px;
+    color: #0c0c0c;
+  }
+
+  /* section for balance analyses*/
+  .contentBalanceAnalyses {
+    height: auto;
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+  }
+  .cardsBalance {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    height: auto;
+  }
+  .charts {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensures all children have the same height */
+    gap: 20px; /* Adds spacing between charts */
+    width: 100%;
+    flex-wrap: wrap; /* Ensures charts stack on smaller screens */
+    height: auto;
     padding: 10px;
+  }
+  .titlebalanaceAnalyeses {
+    padding: 10px 15px;
+  }
+  .chart1,
+  .chart2 {
+    flex: 1 1 300px; /* Allows flexibility and ensures responsiveness */
+    max-width: auto; /* Sets a maximum width for the charts */
+    max-height: 100%;
+    padding: 10px;
+    background: #1717174f;
+    border-radius: 10px; /* Adds rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a shadow effect */
+    text-align: center;
+    height: auto; /* Ensures both charts have the same height */
+    display: flex; /* Centers content vertically */
+    flex-direction: column; /* Ensures vertical alignment of children */
+    justify-content: center; /* Centers content vertically */
+    align-items: center;
+  }
+
+  #balanceChart {
+    height: 200px;
+    width: 200px;
+  }
+
+  #balanceChart2 {
+    height: 200px;
+    width: 200px;
+  }
+  .chartAnalyeseUsersCountry {
+    height: auto;
+    width: 100%;
+  }
+  #myChart3 {
+    height: 400px;
+    width: 200px;
+  }
+  .contentpr2 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: auto;
+    padding: 30px;
+  }
+
+  /* section to do liste design for respancive mobile advice */
+
+  .contentTodoliste {
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+  }
+  .formAlltodo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    padding: 40px 0px;
+    
+  }
+  .formtodo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: rgb(12, 12, 12);
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .diplayTasks {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 5px;
+    width: 100%;
+  }
+  .titleContent {
+    padding: 0px 15px;
+  }
+  .titleContent .t1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: white;
+  }
+
+  .titleContent .t2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+  }
+  .formtodo button {
+    padding: 17px;
+  }
+  .btnedit {
+    display: flex;
+    flex-direction: column;
+    
+    gap: 4px;
   }
 }

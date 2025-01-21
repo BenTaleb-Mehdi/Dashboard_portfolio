@@ -28,7 +28,11 @@ const addUsers = document.querySelector(".addUsers"),
   contentInvoiceUser = document.querySelector(".contentinvoiUser"),
   dashboardHome = document.querySelector(".dashboardHome"),
   AnalyeseUsers = document.querySelector(".AnalyeseUsers"),
-  contentanalysesUsers = document.querySelector(".contentanalysesUsers");
+  contentanalysesUsers = document.querySelector(".contentanalysesUsers"),
+  contentBalanceAnalyses = document.querySelector(".contentBalanceAnalyses"),
+  btn_contentBalanceAnalyses = document.querySelector(".btnBalanceAnalayses"),
+  contentTodoliste = document.querySelector(".contentTodoliste"),
+  btcontentTodoliste = document.querySelector(".btncontentTodoliste");
 
 function hideAllSections() {
   // Fixed function name
@@ -36,6 +40,8 @@ function hideAllSections() {
   contentUsers.classList.add("hidden");
   contentInvoiceUser.classList.add("hidden"); // Fixed variable name
   contentanalysesUsers.classList.add("hidden");
+  contentBalanceAnalyses.classList.add("hidden");
+   contentTodoliste.classList.add("hidden");
 }
 dashboardHome.addEventListener("click", () => {
   hideAllSections();
@@ -54,6 +60,16 @@ invoiceUser.addEventListener("click", () => {
 AnalyeseUsers.addEventListener("click", () => {
   hideAllSections(); // Corrected function name
   contentanalysesUsers.classList.remove("hidden"); // Fixed variable name
+});
+
+btn_contentBalanceAnalyses.addEventListener("click", () => {
+  hideAllSections(); // Corrected function name
+  contentBalanceAnalyses.classList.remove("hidden"); // Fixed variable name
+});
+
+btcontentTodoliste.addEventListener("click", () => {
+  hideAllSections(); // Corrected function name
+  contentTodoliste.classList.remove("hidden"); // Fixed variable name
 });
 
 // Optionally show the default section
@@ -87,7 +103,7 @@ function addCustomNavbar() {
 
   // Add the navbar to all sections dynamically
   const sections = document.querySelectorAll(
-    ".contentUsers, .contentinvoiUser,.contentanalysesUsers"
+    ".contentUsers, .contentinvoiUser,.contentanalysesUsers,.contentBalanceAnalyses, .contentTodoliste"
   );
 
   sections.forEach((section) => {

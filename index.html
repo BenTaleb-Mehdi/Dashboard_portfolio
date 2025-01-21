@@ -11,56 +11,53 @@
     <title>Document</title>
   </head>
   <body>
-    <div class="main">
-      <div class="menu">
-        <div class="profile">
-          <div class="imgProfile">
-            <img src="imgMd.png" />
-          </div>
-          <div class="infoProfile">
-            <h2>Mehdi BenTaleb</h2>
-            <div class="typeJobe">
-              <p>Full-stack developer</p>
-              <a href=""><i class="bx bx-right-top-arrow-circle"></i></a>
-            </div>
-          </div>
-          <div class="dropmenuclose">
-            <i class="bx bx-x"></i>
+    <div class="menu">
+      <div class="profile">
+        <div class="imgProfile">
+          <img src="imgMd.png" />
+        </div>
+        <div class="infoProfile">
+          <h2>Mehdi BenTaleb</h2>
+          <div class="typeJobe">
+            <p>Full-stack developer</p>
+            <a href=""><i class="bx bx-right-top-arrow-circle"></i></a>
           </div>
         </div>
-
-        <div class="menustantard">
-          <button class="dashboardHome">
-            <i class="bx bxs-dashboard"></i><span>Dashbord</span>
-          </button>
-          <button class="btnUser">
-            <i class="bx bxs-user-pin"></i><span>Clients</span>
-          </button>
-          <div class="clinetListebtn">
-            <button class="addUsers">
-              <i class="bx bxs-circle"></i> Users
-            </button>
-            <button class="invoiceUser">
-              <i class="bx bxs-circle"></i> Invoice User
-            </button>
-          </div>
-          <button class="AnalyeseUsers">
-            <i class="bx bxs-bar-chart-alt-2"></i><span>Analyses</span>
-          </button>
-          <button>
-            <i class="bx bx-money-withdraw"></i><span>Balance Analyses</span>
-          </button>
-          <button>
-            <i class="bx bxs-notepad"></i><span>To do liste</span>
-          </button>
-        </div>
-
-        <div class="footermenu">
-          <button><i class="bx bxs-cog"></i><span>Setting</span></button>
-          <button><i class="bx bxs-exit"></i><span>Logout</span></button>
+        <div class="dropmenuclose">
+          <i class="bx bx-x"></i>
         </div>
       </div>
 
+      <div class="menustantard">
+        <button class="dashboardHome">
+          <i class="bx bxs-dashboard"></i><span>Dashbord</span>
+        </button>
+        <button class="btnUser">
+          <i class="bx bxs-user-pin"></i><span>Clients</span>
+        </button>
+        <div class="clinetListebtn">
+          <button class="addUsers"><i class="bx bxs-circle"></i> Users</button>
+          <button class="invoiceUser">
+            <i class="bx bxs-circle"></i> Invoice User
+          </button>
+        </div>
+        <button class="AnalyeseUsers">
+          <i class="bx bxs-bar-chart-alt-2"></i><span>Analyses</span>
+        </button>
+        <button class="btnBalanceAnalayses">
+          <i class="bx bx-money-withdraw"></i><span>Balance Analyses</span>
+        </button>
+        <button class="btncontentTodoliste">
+          <i class="bx bxs-notepad"></i><span>To do liste</span>
+        </button>
+      </div>
+
+      <div class="footermenu">
+        <button><i class="bx bxs-cog"></i><span>Setting</span></button>
+        <button><i class="bx bxs-exit"></i><span>Logout</span></button>
+      </div>
+    </div>
+    <div class="main">
       <div class="content">
         <div class="navbar">
           <div class="dropmenu">
@@ -83,7 +80,11 @@
             </div>
           </div>
         </div>
-
+        <h2 class="titleAnalyese">Dashboard Overview</h2>
+        <br />
+        <h3 class="titlePart">
+          <i class="bx bxs-bar-chart-alt-2"></i> Key Metrics Overview
+        </h3>
         <div class="boxes">
           <!-- Box 1: Users -->
           <div class="box">
@@ -174,7 +175,9 @@
             </div>
           </div>
         </div>
-
+        <h3 class="titlePart">
+          <i class="bx bx-line-chart"></i> Users by Month
+        </h3>
         <div class="analaysesHome">
           <div class="chart">
             <canvas id="myChart"></canvas>
@@ -226,6 +229,9 @@
       </div>
 
       <div class="contentUsers hidden">
+        <h2 class="titleAnalyese">User Analytics & Details</h2>
+        <br />
+        <h3 class="titlePart"><i class="bx bx-data"></i> All Users Overview</h3>
         <div class="usersSpace">
           <div class="datatable">
             <table>
@@ -455,6 +461,10 @@
           </div>
           <div class="bestusersrsAndmessages">
             <div class="bestUsers">
+              <h3 class="titlePart">
+                <i class="bx bxs-inbox"></i> Inbox Overview
+              </h3>
+              <br />
               <div class="bestsClinet">
                 <div class="formClint">
                   <div class="icontBest">
@@ -491,6 +501,10 @@
             </div>
 
             <div class="msgUsers">
+              <h3 class="titlePart">
+                <i class="bx bxs-inbox"></i> Most Engaged Users
+              </h3>
+              <br />
               <div class="message">
                 <div class="infoMsg">
                   <div class="iconmessage">
@@ -541,7 +555,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="contentinvoiUser hidden">
         <div class="spaceinvoice">
           <h2>Personal and <span>Work</span> Details</h2>
@@ -582,6 +596,11 @@
       </div>
 
       <div class="contentanalysesUsers hidden">
+        <div class="titlebalanaceAnalyeses">
+          <h2 class="titleAnalyese">Views and Followers Analysis</h2>
+          <br />
+          <h3 class="titlePart"><i class="bx bx-line-chart"></i> Overview</h3>
+        </div>
         <div class="contentpr1">
           <div class="boxesAnlyses">
             <div class="boxAnalyies">
@@ -676,12 +695,201 @@
             <canvas id="myChart2"></canvas>
           </div>
         </div>
+        <h3 class="titlePart">
+          <i class="bx bxs-bar-chart-alt-2"></i> Analyses Last Followers
+        </h3>
+        <div class="contentpr2">
+          <div class="newUsers">
+            <div class="newUser">
+              <div class="prinfo">
+                <div class="iconNewuser">
+                  <i class="bx bxs-user-plus"></i>
+                </div>
+                <div class="infoNweuser">
+                  <h2>mehdy</h2>
+                  <p>type <span>Website ecommerce</span></p>
+                </div>
+              </div>
+              <div class="newFl">
+                <h2>New</h2>
+                <button><i class="bx bxs-user-detail"></i><br />view</button>
+              </div>
+            </div>
+
+            <div class="newUser">
+              <div class="prinfo">
+                <div class="iconNewuser">
+                  <i class="bx bxs-user-plus"></i>
+                </div>
+                <div class="infoNweuser">
+                  <h2>mehdy</h2>
+                  <p>type <span>Website ecommerce</span></p>
+                </div>
+              </div>
+              <div class="newFl">
+                <h2>New</h2>
+                <button><i class="bx bxs-user-detail"></i><br />view</button>
+              </div>
+            </div>
+
+            <div class="newUser">
+              <div class="prinfo">
+                <div class="iconNewuser">
+                  <i class="bx bxs-user-plus"></i>
+                </div>
+                <div class="infoNweuser">
+                  <h2>mehdy</h2>
+                  <p>type <span>Website ecommerce</span></p>
+                </div>
+              </div>
+              <div class="newFl">
+                <h2>New</h2>
+                <button><i class="bx bxs-user-detail"></i><br />view</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="chartAnalyeseUsersCountry">
+            <canvas id="myChart3"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="contentBalanceAnalyses hidden">
+        <h2 class="titleAnalyeseBalance">Balance Analysis</h2>
+        <h3 class="titlePartBalance">
+          Monitor your financial trends and key insights
+        </h3>
+        <br />
+
+        <div class="cardsBalance">
+          <div class="card">
+            <div class="infoCartd">
+              <h2>Current Balance</h2>
+              <p>Total Balance Income/Expenses</p>
+              <br />
+              <span>$12,540.75</span>
+            </div>
+            <div class="iconCard">
+              <i class="bx bx-money-withdraw"></i>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="infoCartd">
+              <h2>Income</h2>
+              <p>Total Balance Income</p>
+              <br />
+              <span>$7,540.75</span>
+            </div>
+            <div class="iconCard">
+              <i class="bx bx-line-chart"></i>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="infoCartd">
+              <h2>Expenses</h2>
+              <p>Total Balance Expenses</p>
+              <br />
+              <span>$5,540.75</span>
+            </div>
+            <div class="iconCard">
+              <i class="bx bx-line-chart-down"></i>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="charts">
+          <div class="chart1">
+            <h3 class="titlePart">Income vs Expenses</h3>
+            <br />
+            <canvas id="balanceChart"></canvas>
+          </div>
+          <div class="chart2">
+            <canvas id="balanceChart2"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="contentTodoliste hidden">
+        <div class="titleContent">
+          <h1 class="t1">Hello Mr.Mehdi</h1>
+          <h4 class="t2">What is your <span>plan</span> today?</h4>
+        </div>
+
+        <form class="formAlltodo">
+          <div class="formtodo">
+            <label>Enter a your task </label>
+            <input
+              type="text"
+              placeholder="Enter what do tou think ..."
+              id=""
+            />
+            <button type="submit">Add task</button>
+          </div>
+
+          <div class="diplayTasks">
+            <div class="editTask">
+              <h2>Tasks Completed</h2>
+              <ul>
+                <li>
+                  <div class="data">
+                    <i class="bx bx-check"></i>
+                    <span> Hello mr.mehdy data is founded ...</span>
+                  </div>
+                  <div class="btnedit">
+                    <a href="" class="btnCom"
+                      ><i class="bx bx-check-circle"></i> Completed</a
+                    >
+                    <a href="" class="btnDl"
+                      ><i class="bx bx-x-circle"></i> Delete</a
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="completedTask">
+              <h2>Tasks Closed</h2>
+              <ul>
+                <li>
+                  <div class="data">
+                    <i class="bx bx-check-double"></i>
+                    <span> Hello mr.mehdy data is founded ...</span>
+                  </div>
+
+                  <div class="btndelete">
+                    <a href="" class="btnDl"
+                      ><i class="bx bx-x-circle"></i> Delete</a
+                    >
+                  </div>
+                </li>
+                <li>
+                  <div class="data">
+                    <i class="bx bx-check-double"></i>
+                    <span>Hello mr.mehdy data is founded ...</span>
+                  </div>
+
+                  <div class="btndelete">
+                    <a href="" class="btnDl"
+                      ><i class="bx bx-x-circle"></i> Delete</a
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       const ctx = document.getElementById("myChart");
       const ctx2 = document.getElementById("myChart2");
+      const ctx3 = document.getElementById("myChart3");
+      const ctx4 = document.getElementById("balanceChart");
+      const ctx5 = document.getElementById("balanceChart2");
       new Chart(ctx, {
         type: "line",
         data: {
@@ -718,6 +926,115 @@
       });
 
       new Chart(ctx2, {
+        type: "line",
+        data: {
+          labels: [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ],
+          datasets: [
+            {
+              label: "Users in Year 2025",
+              data: [12, 19, 3, 5, 2, 3, 19, 3, 5, 2, 3, 10],
+              borderWidth: 1,
+              borderColor: "#0a7a19",
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      new Chart(ctx3, {
+        type: "bar", // set the chart type here
+        data: {
+          labels: ["January", "February", "March", "April"],
+          datasets: [
+            {
+              type: "bar",
+              label: "Visitors",
+              data: [10, 20, 30, 40],
+              backgroundColor: "#11111", // semi-transparent white for bar
+              borderWidth: 1,
+              borderColor: "grey",
+            },
+            {
+              type: "line",
+              label: "Followers",
+              data: [10, 50, 50, 40],
+              backgroundColor: "rgba(0, 255, 0, 0.3)", // light green with transparency
+              borderColor: "rgba(0, 255, 0, 1)", // solid green for the line
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                color: "rgba(255, 255, 255, 0.1)", // faint gridlines for dark mode
+              },
+              ticks: {
+                color: "white", // white tick marks on the y-axis
+              },
+            },
+            x: {
+              ticks: {
+                color: "white", // white tick marks on the x-axis
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              labels: {
+                color: "white", // white legend text for visibility in dark mode
+              },
+            },
+          },
+        },
+      });
+
+      new Chart(ctx4, {
+        type: "doughnut",
+        data: {
+          labels: ["Ecome", "Expenses"],
+          datasets: [
+            {
+              label: "Ecomes / Expenses 2025",
+              data: [70000, 50000],
+              borderWidth: 0,
+
+              backgroundColor: ["rgb(5, 81, 5)", "rgb(126, 7, 7)"],
+            },
+          ],
+        },
+        options: {
+          respansive: true,
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+
+      new Chart(ctx5, {
         type: "line",
         data: {
           labels: [
